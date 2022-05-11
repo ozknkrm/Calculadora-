@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<h1>Calculadora</h1>
+	<form>
+		<input type="number" name="numero1" id="numero1"><br>
+		<input type="number" name="numero2" id="numero2"><br>
+		<input type="radio" name="operacion" id="suma" value="suma">
+		<label for ="suma">SUMA</label><br>
+		<input type="radio" name="operacion" id="resta" value="resta">
+		<label for ="resta">RESTA</label><br>
+		<input type="radio" name="operacion" id="multiplica" value="multiplica">
+		<label for ="multiplica">MULTIPLICA</label><br>
+		<input type="radio" name="operacion" id="divide" value="divide">
+		<label for ="divide">DIVIDE</label><br>
+	</form>
+
+	<button id="botoncalcular">calcular</button>
+
+	<input type="number" name="resultado" id="resultado" disabled> <br>
+
+	<script type="text/javascript">
+		const miboton = document.getElementById('botoncalcular');
+		miboton.onclick = function () {
+			var minumero1 = parseFloat(document.getElementById("numero1").value);
+			var minumero2 = parseFloat(document.getElementById("numero2").value);
+			var mioperacion = document.querySelector('input[name="operacion"]:checked').value;
+			switch (mioperacion) {
+				case "suma":
+					var miresultado = minumero1 + minumero2
+					break;
+				case "resta":
+					var miresultado = minumero1 - minumero2
+					break;
+				case "multiplica":
+					var miresultado = minumero1 * minumero2
+					break;
+				case "divide":
+					var miresultado = minumero1 / minumero2
+					break;
+				}
+				let mostrarresultado = document.getElementById("resultado");
+				mostrarresultado.value = miresultado;
+		}
+	</script>
+
+
+</body>
+</html>
